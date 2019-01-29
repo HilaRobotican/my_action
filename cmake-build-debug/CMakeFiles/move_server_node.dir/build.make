@@ -70,29 +70,29 @@ CMakeFiles/move_server_node.dir/src/move_server_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/move_server_node.dir/src/move_server_node.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hila/catkin_ws/src/my_action/src/move_server_node.cpp -o CMakeFiles/move_server_node.dir/src/move_server_node.cpp.s
 
-CMakeFiles/move_server_node.dir/src/move_server.cpp.o: CMakeFiles/move_server_node.dir/flags.make
-CMakeFiles/move_server_node.dir/src/move_server.cpp.o: ../src/move_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hila/catkin_ws/src/my_action/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/move_server_node.dir/src/move_server.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/move_server_node.dir/src/move_server.cpp.o -c /home/hila/catkin_ws/src/my_action/src/move_server.cpp
+CMakeFiles/move_server_node.dir/src/move_action_server.cpp.o: CMakeFiles/move_server_node.dir/flags.make
+CMakeFiles/move_server_node.dir/src/move_action_server.cpp.o: ../src/move_action_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hila/catkin_ws/src/my_action/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/move_server_node.dir/src/move_action_server.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/move_server_node.dir/src/move_action_server.cpp.o -c /home/hila/catkin_ws/src/my_action/src/move_action_server.cpp
 
-CMakeFiles/move_server_node.dir/src/move_server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/move_server_node.dir/src/move_server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hila/catkin_ws/src/my_action/src/move_server.cpp > CMakeFiles/move_server_node.dir/src/move_server.cpp.i
+CMakeFiles/move_server_node.dir/src/move_action_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/move_server_node.dir/src/move_action_server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hila/catkin_ws/src/my_action/src/move_action_server.cpp > CMakeFiles/move_server_node.dir/src/move_action_server.cpp.i
 
-CMakeFiles/move_server_node.dir/src/move_server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/move_server_node.dir/src/move_server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hila/catkin_ws/src/my_action/src/move_server.cpp -o CMakeFiles/move_server_node.dir/src/move_server.cpp.s
+CMakeFiles/move_server_node.dir/src/move_action_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/move_server_node.dir/src/move_action_server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hila/catkin_ws/src/my_action/src/move_action_server.cpp -o CMakeFiles/move_server_node.dir/src/move_action_server.cpp.s
 
 # Object files for target move_server_node
 move_server_node_OBJECTS = \
 "CMakeFiles/move_server_node.dir/src/move_server_node.cpp.o" \
-"CMakeFiles/move_server_node.dir/src/move_server.cpp.o"
+"CMakeFiles/move_server_node.dir/src/move_action_server.cpp.o"
 
 # External object files for target move_server_node
 move_server_node_EXTERNAL_OBJECTS =
 
 devel/lib/my_action/move_server_node: CMakeFiles/move_server_node.dir/src/move_server_node.cpp.o
-devel/lib/my_action/move_server_node: CMakeFiles/move_server_node.dir/src/move_server.cpp.o
+devel/lib/my_action/move_server_node: CMakeFiles/move_server_node.dir/src/move_action_server.cpp.o
 devel/lib/my_action/move_server_node: CMakeFiles/move_server_node.dir/build.make
 devel/lib/my_action/move_server_node: /opt/ros/kinetic/lib/libactionlib.so
 devel/lib/my_action/move_server_node: /opt/ros/kinetic/lib/libroscpp.so

@@ -900,23 +900,23 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/hila/catkin_ws/src/my_action/include/move_callback_client.h">
+		<Unit filename="/home/hila/catkin_ws/src/my_action/include/move_action_client.h">
 			<Option target="move_client_node"/>
 		</Unit>
-		<Unit filename="/home/hila/catkin_ws/src/my_action/include/move_server.h">
+		<Unit filename="/home/hila/catkin_ws/src/my_action/include/move_action_server.h">
 			<Option target="move_server_node"/>
 		</Unit>
 		<Unit filename="/home/hila/catkin_ws/src/my_action/include/point.h">
 			<Option target="move_server_node"/>
 		</Unit>
-		<Unit filename="/home/hila/catkin_ws/src/my_action/src/move_callback_client.cpp">
+		<Unit filename="/home/hila/catkin_ws/src/my_action/src/move_action_client.cpp">
 			<Option target="move_client_node"/>
+		</Unit>
+		<Unit filename="/home/hila/catkin_ws/src/my_action/src/move_action_server.cpp">
+			<Option target="move_server_node"/>
 		</Unit>
 		<Unit filename="/home/hila/catkin_ws/src/my_action/src/move_client_node.cpp">
 			<Option target="move_client_node"/>
-		</Unit>
-		<Unit filename="/home/hila/catkin_ws/src/my_action/src/move_server.cpp">
-			<Option target="move_server_node"/>
 		</Unit>
 		<Unit filename="/home/hila/catkin_ws/src/my_action/src/move_server_node.cpp">
 			<Option target="move_server_node"/>

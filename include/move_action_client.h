@@ -15,8 +15,6 @@ public:
 
   ~MoveActionClient(void);
 
-  void fetchParams();
-
   std::string getLocationName() const ;
 
   void sendGoal(std::string location_name);
@@ -37,5 +35,6 @@ private:
 
     std::string location_name_; // the name of the desired location
 
+    void fetchParams();
 };
 #endif // MY_ACTION_MOVE_ACTION_CLIENT_H

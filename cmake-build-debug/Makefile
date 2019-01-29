@@ -869,32 +869,59 @@ gtest/fast:
 	$(MAKE) -f gtest/gtest/CMakeFiles/gtest.dir/build.make gtest/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-src/move_callback_client.o: src/move_callback_client.cpp.o
+src/move_action_client.o: src/move_action_client.cpp.o
 
-.PHONY : src/move_callback_client.o
+.PHONY : src/move_action_client.o
 
 # target to build an object file
-src/move_callback_client.cpp.o:
-	$(MAKE) -f CMakeFiles/move_client_node.dir/build.make CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.o
-.PHONY : src/move_callback_client.cpp.o
+src/move_action_client.cpp.o:
+	$(MAKE) -f CMakeFiles/move_client_node.dir/build.make CMakeFiles/move_client_node.dir/src/move_action_client.cpp.o
+.PHONY : src/move_action_client.cpp.o
 
-src/move_callback_client.i: src/move_callback_client.cpp.i
+src/move_action_client.i: src/move_action_client.cpp.i
 
-.PHONY : src/move_callback_client.i
+.PHONY : src/move_action_client.i
 
 # target to preprocess a source file
-src/move_callback_client.cpp.i:
-	$(MAKE) -f CMakeFiles/move_client_node.dir/build.make CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.i
-.PHONY : src/move_callback_client.cpp.i
+src/move_action_client.cpp.i:
+	$(MAKE) -f CMakeFiles/move_client_node.dir/build.make CMakeFiles/move_client_node.dir/src/move_action_client.cpp.i
+.PHONY : src/move_action_client.cpp.i
 
-src/move_callback_client.s: src/move_callback_client.cpp.s
+src/move_action_client.s: src/move_action_client.cpp.s
 
-.PHONY : src/move_callback_client.s
+.PHONY : src/move_action_client.s
 
 # target to generate assembly for a file
-src/move_callback_client.cpp.s:
-	$(MAKE) -f CMakeFiles/move_client_node.dir/build.make CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.s
-.PHONY : src/move_callback_client.cpp.s
+src/move_action_client.cpp.s:
+	$(MAKE) -f CMakeFiles/move_client_node.dir/build.make CMakeFiles/move_client_node.dir/src/move_action_client.cpp.s
+.PHONY : src/move_action_client.cpp.s
+
+src/move_action_server.o: src/move_action_server.cpp.o
+
+.PHONY : src/move_action_server.o
+
+# target to build an object file
+src/move_action_server.cpp.o:
+	$(MAKE) -f CMakeFiles/move_server_node.dir/build.make CMakeFiles/move_server_node.dir/src/move_action_server.cpp.o
+.PHONY : src/move_action_server.cpp.o
+
+src/move_action_server.i: src/move_action_server.cpp.i
+
+.PHONY : src/move_action_server.i
+
+# target to preprocess a source file
+src/move_action_server.cpp.i:
+	$(MAKE) -f CMakeFiles/move_server_node.dir/build.make CMakeFiles/move_server_node.dir/src/move_action_server.cpp.i
+.PHONY : src/move_action_server.cpp.i
+
+src/move_action_server.s: src/move_action_server.cpp.s
+
+.PHONY : src/move_action_server.s
+
+# target to generate assembly for a file
+src/move_action_server.cpp.s:
+	$(MAKE) -f CMakeFiles/move_server_node.dir/build.make CMakeFiles/move_server_node.dir/src/move_action_server.cpp.s
+.PHONY : src/move_action_server.cpp.s
 
 src/move_client_node.o: src/move_client_node.cpp.o
 
@@ -922,33 +949,6 @@ src/move_client_node.s: src/move_client_node.cpp.s
 src/move_client_node.cpp.s:
 	$(MAKE) -f CMakeFiles/move_client_node.dir/build.make CMakeFiles/move_client_node.dir/src/move_client_node.cpp.s
 .PHONY : src/move_client_node.cpp.s
-
-src/move_server.o: src/move_server.cpp.o
-
-.PHONY : src/move_server.o
-
-# target to build an object file
-src/move_server.cpp.o:
-	$(MAKE) -f CMakeFiles/move_server_node.dir/build.make CMakeFiles/move_server_node.dir/src/move_server.cpp.o
-.PHONY : src/move_server.cpp.o
-
-src/move_server.i: src/move_server.cpp.i
-
-.PHONY : src/move_server.i
-
-# target to preprocess a source file
-src/move_server.cpp.i:
-	$(MAKE) -f CMakeFiles/move_server_node.dir/build.make CMakeFiles/move_server_node.dir/src/move_server.cpp.i
-.PHONY : src/move_server.cpp.i
-
-src/move_server.s: src/move_server.cpp.s
-
-.PHONY : src/move_server.s
-
-# target to generate assembly for a file
-src/move_server.cpp.s:
-	$(MAKE) -f CMakeFiles/move_server_node.dir/build.make CMakeFiles/move_server_node.dir/src/move_server.cpp.s
-.PHONY : src/move_server.cpp.s
 
 src/move_server_node.o: src/move_server_node.cpp.o
 
@@ -1044,15 +1044,15 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... src/move_callback_client.o"
-	@echo "... src/move_callback_client.i"
-	@echo "... src/move_callback_client.s"
+	@echo "... src/move_action_client.o"
+	@echo "... src/move_action_client.i"
+	@echo "... src/move_action_client.s"
+	@echo "... src/move_action_server.o"
+	@echo "... src/move_action_server.i"
+	@echo "... src/move_action_server.s"
 	@echo "... src/move_client_node.o"
 	@echo "... src/move_client_node.i"
 	@echo "... src/move_client_node.s"
-	@echo "... src/move_server.o"
-	@echo "... src/move_server.i"
-	@echo "... src/move_server.s"
 	@echo "... src/move_server_node.o"
 	@echo "... src/move_server_node.i"
 	@echo "... src/move_server_node.s"

@@ -4,7 +4,7 @@
 
 
 /* Construct an action client that listen to "move_server" node. */
-MoveActionClient::MoveActionClient(ros::NodeHandle *nh) : nh_(nh), action_client_("move_server", true)
+MoveActionClient::MoveActionClient(ros::NodeHandle *nh) : nh_(nh), action_client_("move_action_server", true)
 {
   fetchParams();
   ROS_INFO("Waiting for action server to start.");

@@ -70,29 +70,29 @@ CMakeFiles/move_client_node.dir/src/move_client_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/move_client_node.dir/src/move_client_node.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hila/catkin_ws/src/my_action/src/move_client_node.cpp -o CMakeFiles/move_client_node.dir/src/move_client_node.cpp.s
 
-CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.o: CMakeFiles/move_client_node.dir/flags.make
-CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.o: ../src/move_callback_client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hila/catkin_ws/src/my_action/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.o -c /home/hila/catkin_ws/src/my_action/src/move_callback_client.cpp
+CMakeFiles/move_client_node.dir/src/move_action_client.cpp.o: CMakeFiles/move_client_node.dir/flags.make
+CMakeFiles/move_client_node.dir/src/move_action_client.cpp.o: ../src/move_action_client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hila/catkin_ws/src/my_action/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/move_client_node.dir/src/move_action_client.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/move_client_node.dir/src/move_action_client.cpp.o -c /home/hila/catkin_ws/src/my_action/src/move_action_client.cpp
 
-CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hila/catkin_ws/src/my_action/src/move_callback_client.cpp > CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.i
+CMakeFiles/move_client_node.dir/src/move_action_client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/move_client_node.dir/src/move_action_client.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hila/catkin_ws/src/my_action/src/move_action_client.cpp > CMakeFiles/move_client_node.dir/src/move_action_client.cpp.i
 
-CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hila/catkin_ws/src/my_action/src/move_callback_client.cpp -o CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.s
+CMakeFiles/move_client_node.dir/src/move_action_client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/move_client_node.dir/src/move_action_client.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hila/catkin_ws/src/my_action/src/move_action_client.cpp -o CMakeFiles/move_client_node.dir/src/move_action_client.cpp.s
 
 # Object files for target move_client_node
 move_client_node_OBJECTS = \
 "CMakeFiles/move_client_node.dir/src/move_client_node.cpp.o" \
-"CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.o"
+"CMakeFiles/move_client_node.dir/src/move_action_client.cpp.o"
 
 # External object files for target move_client_node
 move_client_node_EXTERNAL_OBJECTS =
 
 devel/lib/my_action/move_client_node: CMakeFiles/move_client_node.dir/src/move_client_node.cpp.o
-devel/lib/my_action/move_client_node: CMakeFiles/move_client_node.dir/src/move_callback_client.cpp.o
+devel/lib/my_action/move_client_node: CMakeFiles/move_client_node.dir/src/move_action_client.cpp.o
 devel/lib/my_action/move_client_node: CMakeFiles/move_client_node.dir/build.make
 devel/lib/my_action/move_client_node: /opt/ros/kinetic/lib/libactionlib.so
 devel/lib/my_action/move_client_node: /opt/ros/kinetic/lib/libroscpp.so

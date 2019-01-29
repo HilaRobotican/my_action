@@ -13,7 +13,7 @@ int main(int argc, char** argv)
   MoveActionServer move(&nh, "move_action_server");
 
   // ready to receive goal from client 
-  ROS_INFO("Started");
+  ROS_INFO("Server started");
   ros::spin();
 
   return 0;
