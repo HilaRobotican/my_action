@@ -26,7 +26,7 @@ Make sure that this param exist in locations.yaml and that your launch includes 
 #define LOCATIONS_CONFIG_PARAM "locations"
 
 /* 
- * Represents an action sever that receives a name of a location from the action client,
+ * Represents an action server that receives a name of a location from the action client,
  * and searches for its x, y, and Y coordinates (after loading this information from a Yaml file). 
  * If the location exists, sends it as a goal to move_base node (which is an action server). 
  */

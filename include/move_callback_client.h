@@ -28,7 +28,7 @@ public:
 
 private:
 
-  //actionlib::SimpleActionClient<my_action::MoveAction> action_client_;
+  actionlib::SimpleActionClient<my_action::MoveAction> action_client_;
 
 }; 
 #endif // MY_ACTION_MOVE_CALLBACK_CLIENT_H

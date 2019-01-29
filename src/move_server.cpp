@@ -15,7 +15,9 @@ MoveAction::MoveAction(std::string name) : //action_server_(nh_, name, boost::bi
   loadLocations();
 }
 
-MoveAction::~MoveAction(){}
+MoveAction::~MoveAction(){
+  delete action_server_;
+}
 
 // Check if the yaml file is valid. If not, exit.
 void MoveAction::validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc::XmlRpcValue::Type wanted_type,
@@ -23,7 +25,7 @@ void MoveAction::validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc:
 {
   if (actual_type != wanted_type)
   {
-    ROS_ERROR(error_msg, i);
+    ROS_ERROR(error_msg, i); // TODO
     ros::shutdown();
     exit(EXIT_FAILURE);
   }
@@ -88,12 +90,12 @@ void MoveAction::executeCB(const my_action::MoveGoalConstPtr &goal)
   // Publish info to the console for the user
   std::cout << "Executing, the loaction name is: " << goal->location_name << std::endl;
 
-//  if (action_server_.isPreemptRequested() || !ros::ok())
-//  {
-//    ROS_INFO("%s: Preempted", action_name_.c_str());
-//    action_server_.setPreempted();
-//    success = false;
-//  }
+  if (action_server_->isPreemptRequested() || !ros::ok())
+  {
+    ROS_INFO("%s: Preempted", action_name_.c_str());
+    action_server_->setPreempted();
+    success = false;
+  }
 
   // Check if the client's goal exists. If not, exit.
   bool location_name_found = locations_map_.find(goal->location_name) != locations_map_.end();
@@ -107,7 +109,7 @@ void MoveAction::executeCB(const my_action::MoveGoalConstPtr &goal)
   feedback_.name = "found";
   // TODO - to send it to move base.
 
-  //action_server_.publishFeedback(feedback_); // publish the feedback
+  action_server_->publishFeedback(feedback_); // publish the feedback
   // this sleep is not necessary, the sequence is computed at 1 Hz for demonstration purposes
   r.sleep();
 
@@ -115,6 +117,6 @@ void MoveAction::executeCB(const my_action::MoveGoalConstPtr &goal)
   {
     result_.res = goal->location_name;
     ROS_INFO("%s: Succeeded", action_name_.c_str());
-    //action_server_.setSucceeded(result_);
+    action_server_->setSucceeded(result_);
   }
 }
