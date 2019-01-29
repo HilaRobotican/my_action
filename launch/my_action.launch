@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<launch>
+    <rosparam file="$(find my_action)/config/locations.yaml" command="load"/>
+    <arg name="location_name" default="hila"/>
+    
+    <!--<node name="move_server" pkg="my_action" type="move_server" respawn="false" output="screen"-->
+    <node name="move_server_node" pkg="my_action" type="move_server_node" respawn="false" output="screen"/>
+
+    
+    <node name="move_client_node" pkg="my_action" type="move_client_node" respawn="false" output="screen">
+        <param name="location_param" type="string" value="$(arg location_name)"/>
+    </node>
+    
+</launch>

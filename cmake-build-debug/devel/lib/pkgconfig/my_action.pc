@@ -1,0 +1,8 @@
+prefix=/home/hila/catkin_ws/src/my_action/cmake-build-debug/devel
+
+Name: my_action
+Description: Description of my_action
+Version: 0.0.0
+Cflags: -I/home/hila/catkin_ws/src/my_action/cmake-build-debug/devel/include -I/home/hila/catkin_ws/src/my_action/include -I/usr/include
+Libs: -L/home/hila/catkin_ws/src/my_action/cmake-build-debug/devel/lib 
+Requires: actionlib_msgs

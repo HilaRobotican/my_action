@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/hila/catkin_ws/src/my_action/cmake-build-debug/devel/setup.sh

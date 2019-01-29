@@ -1,0 +1,36 @@
+locations: [
+{
+    location_name: hila,
+    x: -7.19,
+    y: 4.5,
+    Y: 0.0
+},
+
+{
+    location_name: yair,
+    x: -10.2,
+    y: 4.77,
+    Y: 0.0
+},
+
+{
+    location_name: yam,
+    x: -1.15,
+    y: 3.74,
+    Y: 0.0
+},
+
+{
+    location_name: toilet,
+    x: -12.4,
+    y: -3.35,
+    Y: 0.0
+},
+
+{
+    location_name: noy,
+    x: -13.7,
+    y: -4.05,
+    Y: 0.0
+}
+]
