@@ -1,5 +1,5 @@
-#ifndef MY_ACTION_MOVE_SERVER_H
-#define MY_ACTION_MOVE_SERVER_H
+#ifndef MY_ACTION_MOVE_ACTION_SERVER_H
+#define MY_ACTION_MOVE_ACTION_SERVER_H
 
 #include <ros/ros.h>
 #include <string> 
@@ -30,14 +30,14 @@ Make sure that this param exist in locations.yaml and that your launch includes 
  * and searches for its x, y, and Y coordinates (after loading this information from a Yaml file). 
  * If the location exists, sends it as a goal to move_base node (which is an action server). 
  */
-class MoveAction
+class MoveActionServer
 {
 public:
 
   /* Construct an action server. */
-  MoveAction(ros::NodeHandle *nh, std::string name);
+  MoveActionServer(ros::NodeHandle *nh, std::string name);
 
-  ~MoveAction(void);  
+  ~MoveActionServer(void);
 
 private:
   
@@ -69,4 +69,4 @@ private:
   void executeCB(const my_action::MoveGoalConstPtr &goal);
 
 };
-#endif // MY_ACTION_MOVE_SERVER_H
+#endif // MY_ACTION_MOVE_ACTION_SERVER_H

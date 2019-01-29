@@ -1,13 +1,13 @@
-#include "move_server.h"
+#include "move_action_server.h"
 
 // usage: rosrun my_action move_server
 // or: roslaunch my_action my_action.launch location_name:=___
 
 /* Construct an action server. */
-MoveAction::MoveAction(ros::NodeHandle *nh, std::string name) : //action_server_(nh_, name, boost::bind(&MoveAction::executeCB, this, _1), false),
+MoveActionServer::MoveActionServer(ros::NodeHandle *nh, std::string name) : //action_server_(nh_, name, boost::bind(&MoveActionServer::executeCB, this, _1), false),
                                        nh_(nh), action_name_(name)
 {
-  action_server_ = new actionlib::SimpleActionServer<my_action::MoveAction>(*nh_, name, boost::bind(&MoveAction::executeCB, this, _1), false);
+  action_server_ = new actionlib::SimpleActionServer<my_action::MoveAction>(*nh_, name, boost::bind(&MoveActionServer::executeCB, this, _1), false);
   action_server_->start();
 
   // load the locations yaml file
@@ -15,12 +15,12 @@ MoveAction::MoveAction(ros::NodeHandle *nh, std::string name) : //action_server_
   loadLocations();
 }
 
-MoveAction::~MoveAction(){
+MoveActionServer::~MoveActionServer(){
   delete action_server_;
 }
 
 // Check if the yaml file is valid. If not, exit.
-void MoveAction::validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc::XmlRpcValue::Type wanted_type,
+void MoveActionServer::validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc::XmlRpcValue::Type wanted_type,
                                   const char *error_msg, std::string i)
 {
   if (actual_type != wanted_type)
@@ -31,7 +31,7 @@ void MoveAction::validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc:
   }
 }
 
-void MoveAction::fetchParams()
+void MoveActionServer::fetchParams()
 {
   /* LOCATIONS_CONFIG_PARAM */
   if (!nh_->hasParam(LOCATIONS_CONFIG_PARAM))
@@ -45,7 +45,7 @@ void MoveAction::fetchParams()
 }
 
 /* Parse yaml file and load the locations */
-void MoveAction::loadLocations()
+void MoveActionServer::loadLocations()
 {
   ROS_INFO("Loading yaml file...");
   /* Create locations_map */
@@ -82,7 +82,7 @@ void MoveAction::loadLocations()
 /*
    * The callback function. Called when the client send a goal. 
    */
-void MoveAction::executeCB(const my_action::MoveGoalConstPtr &goal)
+void MoveActionServer::executeCB(const my_action::MoveGoalConstPtr &goal)
 {
   ros::Rate r(10);
   bool success = true;

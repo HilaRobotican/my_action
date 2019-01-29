@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include "move_callback_client.h"
+#include "move_action_client.h"
 
 /**
  * The main function. Create an object of the class and send the goal - location name

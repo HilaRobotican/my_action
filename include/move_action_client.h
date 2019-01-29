@@ -1,5 +1,5 @@
-#ifndef MY_ACTION_MOVE_CALLBACK_CLIENT_H
-#define MY_ACTION_MOVE_CALLBACK_CLIENT_H
+#ifndef MY_ACTION_MOVE_ACTION_CLIENT_H
+#define MY_ACTION_MOVE_ACTION_CLIENT_H
 
 #include <ros/ros.h>
 #include <actionlib/client/simple_action_client.h>
@@ -38,4 +38,4 @@ private:
     std::string location_name_; // the name of the desired location
 
 };
-#endif // MY_ACTION_MOVE_CALLBACK_CLIENT_H
+#endif // MY_ACTION_MOVE_ACTION_CLIENT_H

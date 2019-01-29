@@ -40,8 +40,8 @@ include_directories(
 
 add_executable(move_server_node
 		src/move_server_node.cpp
-		src/move_server.cpp
-		include/move_server.h
+        src/move_action_server.cpp
+        include/move_action_server.h
 		include/point.h)
 
 target_link_libraries(
@@ -52,9 +52,9 @@ target_link_libraries(
 add_dependencies(move_server_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 add_executable(move_client_node
-                src/move_client_node.cpp
-                src/move_callback_client.cpp
-                include/move_callback_client.h)
+		src/move_client_node.cpp
+		src/move_action_client.cpp
+		include/move_action_client.h)
 
 target_link_libraries(
 	move_client_node

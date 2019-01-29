@@ -1,4 +1,4 @@
-#include "move_callback_client.h"
+#include "move_action_client.h"
 
 // usage: rosrun my_action move_callback_client location_name:=____
 
@@ -37,8 +37,8 @@ void MoveActionClient::sendGoal(std::string location_name)
                           boost::bind(&MoveActionClient::doneCb, this, _1, _2),
                           boost::bind(&MoveActionClient::activeCb, this),
                           boost::bind(&MoveActionClient::feedbackCb, this, _1));
-  //                          actionlib::SimpleActionClient<my_action::MoveAction>::SimpleActiveCallback(),
-//                          actionlib::SimpleActionClient<my_action::MoveAction>::SimpleFeedbackCallback());
+  //                          actionlib::SimpleActionClient<my_action::MoveActionServer>::SimpleActiveCallback(),
+//                          actionlib::SimpleActionClient<my_action::MoveActionServer>::SimpleFeedbackCallback());
 }
 
 
