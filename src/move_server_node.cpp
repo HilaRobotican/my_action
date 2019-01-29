@@ -8,7 +8,9 @@
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "move_server_node");
-  MoveAction move("move_server");
+  ros::NodeHandle nh;
+
+  MoveAction move(&nh, "move_server");
 
   // ready to receive goal from client 
   ROS_INFO("Started");

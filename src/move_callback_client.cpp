@@ -1,17 +1,30 @@
 #include "move_callback_client.h"
 
-// usage: rosrun my_action move_callback_client _param:=____
+// usage: rosrun my_action move_callback_client location_name:=____
 
 
 /* Construct an action client that listen to "move_server" node. */
-MoveActionClient::MoveActionClient() : action_client_("move_server", true)
+MoveActionClient::MoveActionClient(ros::NodeHandle *nh) : nh_(nh), action_client_("move_server", true)
 {
+  fetchParams();
   ROS_INFO("Waiting for action server to start.");
   action_client_.waitForServer();
   ROS_INFO("Action server started, sending goal.");
 }
 
 MoveActionClient::~MoveActionClient(void){};
+
+void MoveActionClient::fetchParams()
+{
+  nh_->getParam("location_param", location_name_);
+  ROS_INFO_STREAM("got param: " << location_name_);
+}
+
+std::string MoveActionClient::getLocationName() const
+{
+  return location_name_;
+}
+
 
 void MoveActionClient::sendGoal(std::string location_name)
 {
@@ -27,6 +40,7 @@ void MoveActionClient::sendGoal(std::string location_name)
   //                          actionlib::SimpleActionClient<my_action::MoveAction>::SimpleActiveCallback(),
 //                          actionlib::SimpleActionClient<my_action::MoveAction>::SimpleFeedbackCallback());
 }
+
 
 // Called once when the goal completes
 void MoveActionClient::doneCb(const actionlib::SimpleClientGoalState& state, 

@@ -4,10 +4,10 @@
 // or: roslaunch my_action my_action.launch location_name:=___
 
 /* Construct an action server. */
-MoveAction::MoveAction(std::string name) : //action_server_(nh_, name, boost::bind(&MoveAction::executeCB, this, _1), false),
-                                           action_name_(name)
+MoveAction::MoveAction(ros::NodeHandle *nh, std::string name) : //action_server_(nh_, name, boost::bind(&MoveAction::executeCB, this, _1), false),
+                                       nh_(nh), action_name_(name)
 {
-  action_server_ = new actionlib::SimpleActionServer<my_action::MoveAction>(nh_, name, boost::bind(&MoveAction::executeCB, this, _1), false);
+  action_server_ = new actionlib::SimpleActionServer<my_action::MoveAction>(*nh_, name, boost::bind(&MoveAction::executeCB, this, _1), false);
   action_server_->start();
 
   // load the locations yaml file
@@ -34,13 +34,13 @@ void MoveAction::validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc:
 void MoveAction::fetchParams()
 {
   /* LOCATIONS_CONFIG_PARAM */
-  if (!nh_.hasParam(LOCATIONS_CONFIG_PARAM))
+  if (!nh_->hasParam(LOCATIONS_CONFIG_PARAM))
   {
     ROS_ERROR(ERROR_MSG_MISSING_PARAM, LOCATIONS_CONFIG_PARAM);
     ros::shutdown();
     exit(EXIT_FAILURE);
   }
-  nh_.getParam(LOCATIONS_CONFIG_PARAM, locations_);
+  nh_->getParam(LOCATIONS_CONFIG_PARAM, locations_);
   validateYamlType(locations_.getType(), XmlRpc::XmlRpcValue::TypeArray, ERROR_MSG_INVALID_PARAM, LOCATIONS_CONFIG_PARAM);
 }
 

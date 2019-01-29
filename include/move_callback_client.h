@@ -11,9 +11,13 @@ class MoveActionClient
 public:
 
   /* Construct an action client. */
-  MoveActionClient();
+  MoveActionClient(ros::NodeHandle *nh);
 
-  ~MoveActionClient(void); 
+  ~MoveActionClient(void);
+
+  void fetchParams();
+
+  std::string getLocationName() const ;
 
   void sendGoal(std::string location_name);
   
@@ -27,8 +31,11 @@ public:
   void feedbackCb(const my_action::MoveFeedbackConstPtr& feedback);
 
 private:
+    ros::NodeHandle *nh_;
 
-  actionlib::SimpleActionClient<my_action::MoveAction> action_client_;
+    actionlib::SimpleActionClient<my_action::MoveAction> action_client_;
 
-}; 
+    std::string location_name_; // the name of the desired location
+
+};
 #endif // MY_ACTION_MOVE_CALLBACK_CLIENT_H

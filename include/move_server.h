@@ -35,7 +35,7 @@ class MoveAction
 public:
 
   /* Construct an action server. */
-  MoveAction(std::string name);
+  MoveAction(ros::NodeHandle *nh, std::string name);
 
   ~MoveAction(void);  
 
@@ -43,7 +43,7 @@ private:
   
   // The node handle is constructed and passed into the action server during construction of the action.
   // The feedback and result messages are created for publishing in the action.
-  ros::NodeHandle nh_;
+  ros::NodeHandle *nh_;
   actionlib::SimpleActionServer<my_action::MoveAction> * action_server_;
   std::string action_name_;
   
