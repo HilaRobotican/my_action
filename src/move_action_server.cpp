@@ -1,7 +1,6 @@
 #include "move_action_server.h"
 
-// usage: rosrun my_action move_server
-// or: roslaunch my_action my_action.launch location_name:=___
+// usage: roslaunch my_action my_action.launch location_name:=___
 
 /* Construct an action server. */
 MoveActionServer::MoveActionServer(ros::NodeHandle *nh, std::string name) : //action_server_(nh_, name, boost::bind(&MoveActionServer::executeCB, this, _1), false),
@@ -28,6 +27,7 @@ bool MoveActionServer::validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, X
 
 void MoveActionServer::fetchParams()
 {
+  // TODO - TO CHECK THE PRINTING OF ERRORS IN THIS FUNCTION.
   /* LOCATIONS_CONFIG_PARAM */
   if (!nh_->hasParam(LOCATIONS_CONFIG_PARAM))
   {
@@ -55,30 +55,13 @@ void MoveActionServer::loadLocations()
   /* Create locations_map */
   for (int i = 0; i < locations_.size(); i++)
   {
+    // --- validation check ---//
     bool valid = true;
     valid = valid && validateYamlType(locations_[i].getType(), XmlRpc::XmlRpcValue::TypeStruct);
-
-    std::string location_name; // the key
-    point p;                   // the value
-
-    /* location name */
     valid = valid && validateYamlType(locations_[i]["location_name"].getType(), XmlRpc::XmlRpcValue::TypeString);
-    location_name = static_cast<std::string>(locations_[i]["location_name"]);
-
-    /* x coordinate */
     valid = valid && validateYamlType(locations_[i]["x"].getType(), XmlRpc::XmlRpcValue::TypeDouble);
-    p.x = static_cast<double>(locations_[i]["x"]);
-
-    /* y coordinate */
     valid = valid && validateYamlType(locations_[i]["y"].getType(), XmlRpc::XmlRpcValue::TypeDouble);
-    p.y = static_cast<double>(locations_[i]["y"]);
-
-    /* Y coordinate */
     valid = valid && validateYamlType(locations_[i]["Y"].getType(), XmlRpc::XmlRpcValue::TypeDouble);
-    p.Y = static_cast<double>(locations_[i]["Y"]);
-
-    // Add the location to the map
-    locations_map_[location_name] = p;
 
     if (!valid)
     {
@@ -88,12 +71,24 @@ void MoveActionServer::loadLocations()
       ros::shutdown();
       exit(EXIT_FAILURE);
     }
+    // ------------------------//
+
+    std::string location_name; // the key
+    point p;                   // the value
+
+    location_name = static_cast<std::string>(locations_[i]["location_name"]);
+    p.x = static_cast<double>(locations_[i]["x"]);
+    p.y = static_cast<double>(locations_[i]["y"]);
+    p.Y = static_cast<double>(locations_[i]["Y"]);
+
+    // Add the location to the map
+    locations_map_[location_name] = p;
   }
 }
 
 /*
-   * The callback function. Called when the client send a goal. 
-   */
+ * The callback function. Called when the client send a goal.
+ */
 void MoveActionServer::executeCB(const my_action::MoveGoalConstPtr &goal)
 {
   ros::Rate r(10);
