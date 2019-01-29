@@ -10,19 +10,6 @@
 
 // TODO to change my_action to mobilican_msgs
 
-// Error Messages:
-#define ERROR_MSG_YAML "[MoveAction]: load locations at index %s param data type is invalid or missing. \
-make sure that this param exist in locations.yaml and that your launch includes this param file. shutting down..."
-
-#define ERROR_MSG_LOCATION_DOESNT_EXIST "[MoveAction]: couldn't locate model specification for location name %s. \
-Make sure locations.yaml contains all the necessary locations. shutting down..."
-
-#define ERROR_MSG_MISSING_PARAM "[MoveAction]: %s param is missing on param server. \
-Make sure that this param exist in locations.yaml and that your launch includes this param file. shutting down..."
-
-#define ERROR_MSG_INVALID_PARAM "[MoveAction]: %s param is invalid (needs to be of an array type) or missing. \
-Make sure that this param exist in locations.yaml and that your launch includes this param file. shutting down..."
-
 #define LOCATIONS_CONFIG_PARAM "locations"
 
 /* 
@@ -55,8 +42,7 @@ private:
   std::map<std::string, point> locations_map_;
 
   // Check if the yaml file is valid. If not, exit. 
-  void validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc::XmlRpcValue::Type wanted_type, 
-                        const char* error_msg, std::string i);
+  bool validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc::XmlRpcValue::Type wanted_type);
   
   void fetchParams();
   

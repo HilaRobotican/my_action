@@ -65,25 +65,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed34c65e-305e-4b59-a5bc-0a907fb4d7d2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_client_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_client_node.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_client_node.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_client_node.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_client_node.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_client_node.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_client_node.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_client_node.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_server_node.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_server_node.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_server_node.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_server_node.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_server_node.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_server_node.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_server_node.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/move_server_node.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/my_action-msg-extras.cmake.develspace.in" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/my_action-msg-extras.cmake.develspace.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/my_action-msg-extras.cmake.installspace.in" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/my_action-msg-extras.cmake.installspace.in" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/my_action.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/my_action.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/move_action_client.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/move_action_client.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/move_action_client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/move_action_client.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/move_server_node.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/move_server_node.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/move_action_server.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/move_action_server.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/move_action_server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/move_action_server.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -107,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/move_action_client.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="101" selection-start-line="6" selection-start-column="101" selection-end-line="6" selection-end-column="101" />
+            <state relative-caret-position="187">
+              <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -137,11 +120,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/move_action_server.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="128" selection-start-line="9" selection-start-column="119" selection-end-line="9" selection-end-column="128" />
+            <state relative-caret-position="501">
+              <caret line="116" column="15" selection-start-line="116" selection-start-column="15" selection-end-line="116" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -170,8 +153,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/move_action_server.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="46" column="53" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="53" />
+            <state relative-caret-position="93">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#65#85#0" expanded="true" />
               </folding>
@@ -186,8 +169,8 @@
       <find>action_server_</find>
       <find>server</find>
       <find>action</find>
-      <find>nh_</find>
       <find>nh</find>
+      <find>nh_</find>
       <find>moveAction</find>
     </findStrings>
   </component>
@@ -202,14 +185,16 @@
         <option value="$PROJECT_DIR$/src/move_client_node.cpp" />
         <option value="$PROJECT_DIR$/include/move_server.h" />
         <option value="$PROJECT_DIR$/src/move_server.cpp" />
-        <option value="$PROJECT_DIR$/include/move_action_server.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/move_action_client.h" />
         <option value="$PROJECT_DIR$/src/move_server_node.cpp" />
         <option value="$PROJECT_DIR$/src/move_action_client.cpp" />
+        <option value="$PROJECT_DIR$/include/move_action_server.h" />
+        <option value="$PROJECT_DIR$/src/move_action_server.cpp" />
       </list>
     </option>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="600" />
     <option name="y" value="-4" />
@@ -626,18 +611,18 @@
       <workItem from="1548743463618" duration="1808000" />
       <workItem from="1548745770671" duration="560000" />
       <workItem from="1548746594592" duration="4000" />
-      <workItem from="1548746890288" duration="9762000" />
+      <workItem from="1548746890288" duration="10814000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12187000" />
+    <option name="totallyTimeSpent" value="13239000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.106688775" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.106688775" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -650,7 +635,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
       <window_info anchor="bottom" id="CMake" order="11" weight="0.17761034" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32831" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -677,47 +662,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/move_action_client.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding>
-            <element signature="e#83#103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/move_action_server.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="128" selection-start-line="9" selection-start-column="119" selection-end-line="9" selection-end-column="128" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/move_action_server.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="46" column="53" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="53" />
-          <folding>
-            <element signature="e#65#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/launch/my_action.launch">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="72" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/move_server_node.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -733,8 +681,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/move_action_client.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="101" selection-start-line="6" selection-start-column="101" selection-end-line="6" selection-end-column="101" />
+        <state relative-caret-position="187">
+          <caret line="11" column="51" lean-forward="true" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/move_action_client.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="9" lean-forward="true" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+          <folding>
+            <element signature="e#83#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/move_server_node.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="48" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/move_action_server.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#65#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/move_action_server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="116" column="15" selection-start-line="116" selection-start-column="15" selection-end-line="116" selection-end-column="15" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,8 @@
 #include <ros/ros.h>
 #include "move_action_server.h"
 
+// usage:
+
 /**
  * The main function. Create an object of the class and load the yaml file. 
  * Then waits for the client's goal. 

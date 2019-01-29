@@ -7,7 +7,8 @@
 MoveActionServer::MoveActionServer(ros::NodeHandle *nh, std::string name) : //action_server_(nh_, name, boost::bind(&MoveActionServer::executeCB, this, _1), false),
                                        nh_(nh), action_name_(name)
 {
-  action_server_ = new actionlib::SimpleActionServer<my_action::MoveAction>(*nh_, name, boost::bind(&MoveActionServer::executeCB, this, _1), false);
+  action_server_ = new actionlib::SimpleActionServer<my_action::MoveAction>(*nh_, name,
+                        boost::bind(&MoveActionServer::executeCB, this, _1), false);
   action_server_->start();
 
   // load the locations yaml file
@@ -20,15 +21,9 @@ MoveActionServer::~MoveActionServer(){
 }
 
 // Check if the yaml file is valid. If not, exit.
-void MoveActionServer::validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc::XmlRpcValue::Type wanted_type,
-                                  const char *error_msg, std::string i)
+bool MoveActionServer::validateYamlType(XmlRpc::XmlRpcValue::Type actual_type, XmlRpc::XmlRpcValue::Type wanted_type)
 {
-  if (actual_type != wanted_type)
-  {
-    ROS_ERROR(error_msg, i); // TODO
-    ros::shutdown();
-    exit(EXIT_FAILURE);
-  }
+  return actual_type == wanted_type;
 }
 
 void MoveActionServer::fetchParams()
@@ -36,12 +31,21 @@ void MoveActionServer::fetchParams()
   /* LOCATIONS_CONFIG_PARAM */
   if (!nh_->hasParam(LOCATIONS_CONFIG_PARAM))
   {
-    ROS_ERROR(ERROR_MSG_MISSING_PARAM, LOCATIONS_CONFIG_PARAM);
+    ROS_ERROR("[MoveActionServer]: %s param is missing on param server. "
+              "Make sure that your launch includes this param file. "
+              "shutting down...", LOCATIONS_CONFIG_PARAM);
     ros::shutdown();
     exit(EXIT_FAILURE);
   }
   nh_->getParam(LOCATIONS_CONFIG_PARAM, locations_);
-  validateYamlType(locations_.getType(), XmlRpc::XmlRpcValue::TypeArray, ERROR_MSG_INVALID_PARAM, LOCATIONS_CONFIG_PARAM);
+  if (!validateYamlType(locations_.getType(), XmlRpc::XmlRpcValue::TypeArray))
+  {
+    ROS_ERROR("[MoveActionServer]: %s param is invalid (needs to be of an array type) or missing."
+              "Make sure that this param exist in locations.yaml and that your launch includes this param file. "
+              "shutting down...", LOCATIONS_CONFIG_PARAM);
+    ros::shutdown();
+    exit(EXIT_FAILURE);
+  }
 }
 
 /* Parse yaml file and load the locations */
@@ -51,31 +55,39 @@ void MoveActionServer::loadLocations()
   /* Create locations_map */
   for (int i = 0; i < locations_.size(); i++)
   {
-    std::string str_i = std::to_string(i).c_str();
-    // ROS_INFO("errrrrrorrrrrr: %s", str_i.c_str());
-    validateYamlType(locations_[i].getType(), XmlRpc::XmlRpcValue::TypeStruct, ERROR_MSG_YAML, str_i);
+    bool valid = true;
+    valid = valid && validateYamlType(locations_[i].getType(), XmlRpc::XmlRpcValue::TypeStruct);
 
     std::string location_name; // the key
     point p;                   // the value
 
     /* location name */
-    validateYamlType(locations_[i]["location_name"].getType(), XmlRpc::XmlRpcValue::TypeString, ERROR_MSG_YAML, str_i);
+    valid = valid && validateYamlType(locations_[i]["location_name"].getType(), XmlRpc::XmlRpcValue::TypeString);
     location_name = static_cast<std::string>(locations_[i]["location_name"]);
 
     /* x coordinate */
-    validateYamlType(locations_[i]["x"].getType(), XmlRpc::XmlRpcValue::TypeDouble, ERROR_MSG_YAML, str_i);
+    valid = valid && validateYamlType(locations_[i]["x"].getType(), XmlRpc::XmlRpcValue::TypeDouble);
     p.x = static_cast<double>(locations_[i]["x"]);
 
     /* y coordinate */
-    validateYamlType(locations_[i]["y"].getType(), XmlRpc::XmlRpcValue::TypeDouble, ERROR_MSG_YAML, str_i);
+    valid = valid && validateYamlType(locations_[i]["y"].getType(), XmlRpc::XmlRpcValue::TypeDouble);
     p.y = static_cast<double>(locations_[i]["y"]);
 
     /* Y coordinate */
-    validateYamlType(locations_[i]["Y"].getType(), XmlRpc::XmlRpcValue::TypeDouble, ERROR_MSG_YAML, str_i);
+    valid = valid && validateYamlType(locations_[i]["Y"].getType(), XmlRpc::XmlRpcValue::TypeDouble);
     p.Y = static_cast<double>(locations_[i]["Y"]);
 
     // Add the location to the map
     locations_map_[location_name] = p;
+
+    if (!valid)
+    {
+      ROS_ERROR("[MoveActionServer]: load locations at index %d param data type is invalid or missing."
+                "Make sure that this param exist in locations.yaml and that your launch includes "
+                "this param file. shutting down...", i);
+      ros::shutdown();
+      exit(EXIT_FAILURE);
+    }
   }
 }
 
@@ -101,7 +113,9 @@ void MoveActionServer::executeCB(const my_action::MoveGoalConstPtr &goal)
   bool location_name_found = locations_map_.find(goal->location_name) != locations_map_.end();
   if (!location_name_found)
   {
-    ROS_ERROR(ERROR_MSG_LOCATION_DOESNT_EXIST, goal->location_name.c_str());
+    ROS_ERROR( "[MoveActionServer]: couldn't locate model specification for location name %s. "
+               "Make sure locations.yaml contains all the necessary locations. shutting down...",
+               goal->location_name.c_str());
     ros::shutdown();
     exit(EXIT_FAILURE);
   }
