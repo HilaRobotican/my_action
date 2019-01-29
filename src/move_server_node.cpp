@@ -1,7 +1,8 @@
 #include <ros/ros.h>
 #include "move_action_server.h"
 
-// usage:
+// usage: roslaunch my_action my_action.launch location_name:=tal
+
 
 /**
  * The main function. Create an object of the class and load the yaml file. 

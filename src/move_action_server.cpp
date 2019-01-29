@@ -121,6 +121,8 @@ void MoveActionServer::executeCB(const my_action::MoveGoalConstPtr &goal)
   }
 
   feedback_.name = "found";
+  point cur_point = locations_map_[goal->location_name];
+  ROS_INFO("x: %f, y: %f, :y %f ", cur_point.x, cur_point.y, cur_point.Y);
   // TODO - to send it to move base.
 
   action_server_->publishFeedback(feedback_); // publish the feedback
